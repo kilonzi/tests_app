@@ -5,7 +5,20 @@
 # If you have no idea where to begin, remember to check out the cheatsheets for string and logic/control
 # 
 # odds_and_evens("abcdefg",true)    # => "bdf"
-# odds_and_evens("abcdefg",false)   # => "aceg"
+#odds_and_evens("abcdefg",false)   # => "aceg"
 
 def odds_and_evens(string, return_odds)
+    final = []
+    if return_odds
+        (1..string.size).step(2) do |x|
+            final << string[x]
+        end
+    else
+        (0..string.size).step(2) do |x|
+            final << string[x]
+        end
+    end
+    final = final.join
+    final
 end
+odds_and_evens("abcdefg",true)   # => "aceg"
